@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Style the search box */
+#mySearch {
+  border-radius: 16px;
+  margin-top: 8%;
+  border: 12px solid black;
+  margin-left: 35%;
+  width: 30%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myMenu li a {
+   margin-left: 36%;
+  padding: 12px;
+  text-decoration: none;
+
+  color: black;
+  display: block;
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+
+<div class="row">
+  <div class="left">
+    
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li><a href="ultron.html">Age of ultron</a></li>
+      <li><a href="rings.html">Lord of rings</a></li>
+      <li><a href="potter.html">Harrypotter</a></li>
+      <li><a href="godzilla.html">Godzilla</a></li>
+      <li><a href="conjuring1.html">Conjuring</a></li>
+      <li><a href="justice_league.html">Justice Leauge</a></li>
+    </ul>
+  </div>
+  </div>
+  
+  
+
+<script>
+ //  $(function()
+ //  {
+ // $('#myMenu').hide();
+//  $('#mySearch').on('focus',function()
+ // {
+ //   $('#myMenu').show();
+ // });
+//})
+function myFunction()
+ {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  if (input.value=='')
+  {
+ document.getElementById("myMenu").style.display='none';
+ }
+ else
+ {
+    for (i = 0; i < li.length; i++)
+    {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) 
+    {
+      li[i].style.display = "";
+    }
+     else 
+     {
+      li[i].style.display = "none";
+    }
+   }
+}
+}
+
+</script>
+
+</body>
+</html>
